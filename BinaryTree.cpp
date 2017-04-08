@@ -29,6 +29,7 @@ void BinaryTree::removeSubtree(BinaryTreeNode* x)
 	
 }
 
+
 void BinaryTree::postorderTreeWalk(BinaryTreeNode* x)
 {
 	if(x != NULL)
@@ -60,6 +61,7 @@ void BinaryTree::preorderTreeWalk(BinaryTreeNode* x)
 	}
 }
 
+
 void BinaryTree::treeInsert(BinaryTreeNode* node)
 {
 	BinaryTreeNode* y = NULL;
@@ -74,14 +76,18 @@ void BinaryTree::treeInsert(BinaryTreeNode* node)
 			x = x->rightNode;
 	}
 	node->parentNode = y;
-	
+	//check condition for empty node
 	if(y == NULL)
 	{
 		rootNode = node; 	// tree was empty
-	} else if (node->nodeKey < y->nodeKey)
+	}
+	//if the new node is smaller than the old node (left)
+	else if (node->nodeKey < y->nodeKey)
 	{
 		y->leftNode = node;
-	} else
+	}
+	//if the new node is smaller than the old node (right_
+	else
 	{
 		y->rightNode = node;
 	}
